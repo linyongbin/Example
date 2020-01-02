@@ -7,7 +7,7 @@
 //
 
 #import "EXAMPLEViewController.h"
-
+#import <MBProgressHUD+YB.h>
 @interface EXAMPLEViewController ()
 
 @end
@@ -24,6 +24,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClickToast:(id)sender {
+    [MBProgressHUD toast:@"哇哈哈"];
+}
+- (IBAction)onClickLoading:(id)sender {
+    [MBProgressHUD loadingHUD];
+    [self performSelector:@selector(hide) withObject:nil afterDelay:2];
+}
+
+- (IBAction)onClickTextLoading:(id)sender {
+    [MBProgressHUD showMessage:@"哇哈哈"];
+    [self performSelector:@selector(hide) withObject:nil afterDelay:2];
+}
+
+- (void)hide{
+    [MBProgressHUD hideHUD];
 }
 
 @end

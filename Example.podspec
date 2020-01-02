@@ -21,22 +21,27 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/林勇彬/Example'
+  s.homepage         = 'https://github.com/linyongbin/Example'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '林勇彬' => '447000693@qq.com' }
-  s.source           = { :git => 'https://github.com/林勇彬/Example.git', :tag => s.version.to_s }
+  s.author           = { 'linyongbin' => '447000693@qq.com' }
+  s.source           = { :git => 'https://github.com/linyongbin/Example.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Example/Classes/**/*'
+  #自己的逻辑代码
+  s.source_files  = "Example/Pod/Classes/*.{h,m}"
+  #依赖自己的或别人的Framework文件
+  #s.vendored_frameworks = 'Example/Classes/*.framework'
   
   # s.resource_bundles = {
   #   'Example' => ['Example/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  #系统依赖库
+  s.frameworks = 'UIKit'
+  #依赖第三方框架
+  s.dependency 'MBProgressHUD'
 end
